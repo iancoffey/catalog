@@ -17,5 +17,5 @@ Run `bentoml --help` for BentoML usage. Using the [Tekton CLI](https://github.co
 Use bentoml to retrieve a full ML build environment in the cwd:
 
 ```shell
-tkn task start bentoml -p ARGS="retrieve ServiceName:20200616152703_9E2AD7","YATAISERVICE=10.10.10.1:50051 --target_dir=/workspace/storage"
+tkn task start bentoml -p ARGS="retrieve ServiceName:20200616152703_9E2AD7 --target_dir=/workspace/storage" -p "YATAISERVICE=192.168.64.7:50051" --workspace name=bentoml,emptyDir=""
 ```
