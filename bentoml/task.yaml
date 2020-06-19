@@ -10,7 +10,8 @@ spec:
     description: BentoML CLI arguments to run
   - name: YATAISERVICE
     type: string
-    description: BentoML CLI arguments to run
+    description: YataiService to connect to
+    default: ""
   steps:
   - name: bento
     image: iancoffey/bentoml-python3:latest
@@ -18,7 +19,7 @@ spec:
     args: ["$(inputs.params.ARGS)"]
     env:
       - name: "BENTOML__YATAI_SERVICE__URL"
-        value: YATAISERVICE
+        value: "$(inputs.params.YATAISERVICE)"
   workspaces:
   - name: bentoml
     description: The folder where bentoml will write state to
